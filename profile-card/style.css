@@ -1,0 +1,140 @@
+:root {
+    font-family: 'Kumbh Sans', sans-serif;
+    --dark-cyan: hsl(185, 75%, 39%);
+    --dark-desaturated-blue: hsl(229, 23%, 23%);
+    --dark-grayish-blue: hsl(227, 10%, 46%);
+    --dark-gray: hsl(0, 0%, 59%);
+    font-size: 18px;
+}
+
+*,
+*::after,
+*::before {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-color: var(--dark-cyan);
+    overflow: hidden;
+}
+
+.main {
+    height: 100vh;
+    position: relative;
+}
+
+.card::before {
+    content: url(./images/bg-pattern-top.svg);
+    position: absolute;
+    top: -40rem;
+    left: -44rem;
+    z-index: -1;
+}
+
+
+.card {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 18rem;
+
+    border-radius: 1rem;
+    box-shadow: 0 0 1rem var(--dark-grayish-blue);
+    z-index: 1;
+}
+
+.card::after {
+    width: 100%;
+    
+    content: url(./images/bg-pattern-bottom.svg);
+    transform: scale(1.1);
+    position: absolute;
+    top: 12rem;
+    left: 9rem;
+    z-index: -1;
+}
+
+/* Top */
+.top {
+    position: relative;
+    height: 7rem;
+    width: 100%;
+    background-image: url(./images/bg-pattern-card.svg);
+    border-radius: 1rem 1rem 0 0;
+
+    display: flex;
+    justify-content: center;
+}
+
+.top > .user-img {
+    position: absolute;
+    background: white;
+    padding: 0.4rem;
+    border-radius: 50%;
+
+    top: 3.5rem;
+}
+
+/* User - Info */
+.info {
+    padding-top: 3rem;
+    background-color: white;
+    text-align: center;
+}
+
+.info > .name {
+    color: var(--dark-desaturated-blue);
+    font-weight: 700;
+    margin: 0;
+    padding: 1rem 0;
+}
+
+.info > .name > .age {
+    padding-left: 0.5rem;
+    color: var(--dark-grayish-blue);
+    font-weight: 400;
+}
+
+.info > .place {
+    color: var(--dark-gray);
+    font-weight: 400;
+    margin: 0;
+    padding: 0 0 1rem;
+}
+
+/* Bottom */
+
+.bottom {
+    /* border-top: 1px solid white; */
+    display: flex;
+    background-color: white;
+    border-radius: 0 0 1rem 1rem;
+    padding: 1rem;
+
+    border-top: 1px solid rgb(231, 221, 221);
+}
+
+.bottom > * {
+    flex-basis: 100%;
+    text-align: center;
+}
+
+.bottom > .block > .number {
+    font-size: 0.7rem;
+    font-weight: 900;
+    color: var(--dark-desaturated-blue);
+}
+
+.bottom > .block > .unit {
+    font-size: 0.7rem;
+    font-weight: 200;
+    color: var(--dark-gray);
+    padding-top: 0.5rem;
+}
+
+.attribution {
+    padding-top: 2rem;
+}
